@@ -1,0 +1,9 @@
+com\carfun\entity\client\UserCar.class
+com\carfun\entity\client\UserInfo.class
+com\carfun\entity\mechanic\ShopDto.class
+com\carfun\entity\client\UserCommunity.class
+com\carfun\entity\mechanic\MechanicUser.class
+com\carfun\entity\client\BannerAccessRecord.class
+com\carfun\entity\client\BannerManagement.class
+com\carfun\entity\client\User.class
+com\carfun\entity\mechanic\MechanicInfo.class

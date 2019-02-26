@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="flaky-entity" />
+        <module name="flaky-lifecycle-manager" />
+        <module name="flaky-maven-extension" />
+        <module name="flaky-persistence" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="flaky-entity" target="1.8" />
+      <module name="flaky-lifecycle-manager" target="1.8" />
+      <module name="flaky-manager-parent" target="1.8" />
+      <module name="flaky-maven-extension" target="1.8" />
+      <module name="flaky-persistence" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

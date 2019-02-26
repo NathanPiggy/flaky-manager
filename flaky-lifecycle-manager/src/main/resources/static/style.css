@@ -1,0 +1,322 @@
+html,body{
+    padding:0;
+    margin: 0;
+    background-color: #1e1f33;
+    position: relative;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+div.header{
+    width: 100%;
+    background-color: #25253d;
+    height: 65px;
+    font-size: 0;
+    border-bottom: 1px solid #1b1c30;
+}
+div.header label,div.header span{
+    display: inline-block;
+    color: #ccc;
+    line-height: 64px;
+}
+div.header label {
+    font-size: 20px;
+    font-weight: 600;
+    padding-left: 24px;
+    width: 30%;
+    color: #fff;
+    /*text-align: center;*/
+}
+div.header span{
+    font-size: 14px;
+    text-align: right;
+    padding-right: 32px;
+    width: 70%;
+}
+.content,.historyContent{
+    padding: 24px;
+    font-size: 0;
+    height: 100%;
+    color: #fff;
+    display: flex;
+}
+.historyContent{
+    display: none;
+}
+.content .chartBox,.historyContent .chartBox{
+    /*width: 25%;*/
+    flex: 1;
+    border-radius: 4px;
+    min-height: 400px;
+    background-color: #25253d;
+    overflow: hidden;
+    font-size: 14px;
+}
+.chartBox .title{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    background-color: #2c2d4b;
+    font-size: 14px;
+    position: relative;
+}
+.content .tableBox{
+    /*width: 70%;*/
+    flex: 3;
+    padding-left: 20px;
+    overflow: hidden;
+    font-size: 14px;
+    position: relative;
+}
+.tableBox .mainData{
+    min-height: 400px;
+    background-color: #25253d;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.tableBox .tabLabel{
+    height: 40px;
+    line-height: 38px;
+    border-bottom: 1px solid #22233d;
+    background-color: #2c2d4b;
+    padding-left: 20px;
+}
+.tabLabel label{
+    padding: 0 24px;
+    display: inline-block;
+    line-height: 35px;
+    color: #eee;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+.tabLabel label.active{
+    color: #1571fa;
+    border-bottom-color: #1571fa;
+}
+.tableGrid{
+    margin: 5px 16px 10px;
+}
+.tableBox table,.chartBox table{
+    color: #9a9a9a;
+    font-size: 12px;
+    border-collapse:collapse;
+    /*margin: 20px;*/
+    width: 100%;
+}
+.chartBox .historyTable{
+    padding: 10px 20px 16px;
+    min-height: 400px;
+    border-bottom: 1px solid #33334d;
+}
+table tbody tr:hover{background-color: #33334d;}
+table tbody tr:hover td{color: #fff}
+.tableBox table td,.chartBox table td{
+    text-align: center;
+    padding: 12px 10px;
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tableBox table thead td,.chartBox table thead td{
+    border-bottom: 2px solid #33334d;
+}
+table td a{
+    text-decoration: underline;
+    color: #1571fa;
+    display: inline-block;
+    padding: 0 5px;
+    cursor: pointer;
+}
+div#done,div#newFound{
+    display: none;
+    border-bottom: 1px solid #33334d;
+    min-height: 300px;
+}
+a.backToHis{
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: #ccc;
+    padding: 0 12px;
+}
+
+.toast{
+    position: fixed;
+    line-height: 36px;
+    font-size: 15px;
+    color: #fff;
+    background-color: rgba(200,200,200,.3);
+    max-width: 80%;
+    padding: 5px 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 4px;
+    text-align: center;
+    z-index: 100;
+}
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 98;
+    background-color: rgba(255,255,255,0.4);
+}
+.popup .popupCont{
+    background-color: rgba(51,51,77,1);
+    min-width: 60%;
+    max-width: 90%;
+    max-height: 60%;
+    padding: 18px 24px 24px;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #eee;
+}
+.popupCont h3{
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+.popupBox{
+    border: 1px solid #555;
+    overflow-y: auto;
+}
+a.closed{
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 24px;
+    background-color: #1373ec;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.fakeTr{
+    font-size: 0;
+}
+.fakeTr label{
+    font-size: 12px;
+    text-align: left;
+    width: 50%;
+    display: inline-block;
+    padding: 10px;
+}
+.fakeTr label+label{
+    border-left: 1px solid #555;
+}
+
+#fillBox .fakeTr{
+    border-top: 1px solid #555;
+}
+
+
+.fl {
+    float: left;
+}
+.pagger {
+    height: 30px;
+    margin: 20px auto 0px auto;
+    text-align: center;
+    width: 730px;
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #303133;
+    display: block;
+}
+.tableBox{
+    padding-bottom: 0px;
+}
+.pagger-box{
+
+    width: 100%;
+
+}
+
+.pagger button {
+    padding: 0 5px;
+    margin: 0 6px;
+    height: 18px;
+    float: left;
+    cursor: pointer;
+    border: 0px solid #ebebeb;
+    background-color: transparent;
+    outline: none;
+    color: #ddd;
+    font-size: 12px;
+}
+.pagger .first-page,
+.pagger .last-page {
+    margin: 0;
+    /*display: none;*/
+}
+.pagger .pageWrap {
+    height: 40px;
+    float: left;
+    overflow: hidden;
+}
+.pagger .pageWrap ul {
+    width: 999999999px;
+    height: 40px;
+    float: left;
+}
+.pagger .pageWrap ul li {
+    width: 15px;
+    height: 16px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    pagger-sizing: border-pagger;
+    cursor: pointer;
+    float: left;
+    color: #ddd;
+}
+.pagger .pageWrap ul .sel-page {
+    background-color: #1373ec;
+    color: #ddd;
+    width: auto;
+    padding: 0 4px;
+    /*box-shadow: 0 0 6px rgba(32,225,247,0.3);*/
+}
+.pagger .jump-text {
+    width: 30px;
+    height: 20px;
+    pagger-sizing: border-pagger;
+    border:1px solid #E5E6E7;
+    text-align: center;
+    margin: 0 5px;
+    float: left;
+    background-color: transparent;
+    outline: none;
+    border-radius: 4px;
+    color: #ddd;
+    font-size: 12px;
+}
+.pagger .jump-button {
+    margin: 0;
+    float: left;
+}
+.pagger .total-pages,
+.pagger .total-count {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    font-size: 12px;
+    color: #ddd;
+}
+.pre-page{
+    transform: rotate(-90deg);
+}
+.next-page{
+    transform: rotate(90deg);
+}

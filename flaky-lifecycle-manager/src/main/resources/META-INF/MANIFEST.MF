@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Class-Path: springfox-swagger-common-2.7.0.jar spring-oxm-4.3.14.RELEA
+ SE.jar springfox-spi-2.7.0.jar mybatis-spring-boot-starter-1.1.1.jar 
+ spring-jdbc-4.3.14.RELEASE.jar jcl-over-slf4j-1.7.25.jar reflections-
+ 0.9.11.jar byte-buddy-1.6.14.jar springfox-swagger-ui-2.7.0.jar tomca
+ t-embed-core-8.5.27.jar mybatis-spring-boot-autoconfigure-1.1.1.jar s
+ pringfox-swagger2-2.7.0.jar springfox-spring-web-2.7.0.jar spring-boo
+ t-starter-jdbc-1.5.10.RELEASE.jar hibernate-validator-5.3.6.Final.jar
+  spring-data-commons-1.13.10.RELEASE.jar swagger-models-1.5.13.jar sp
+ ring-context-support-4.3.14.RELEASE.jar spring-boot-starter-web-1.5.1
+ 0.RELEASE.jar spring-core-4.3.14.RELEASE.jar spring-expression-4.3.14
+ .RELEASE.jar spring-boot-autoconfigure-1.5.10.RELEASE.jar jackson-ann
+ otations-2.8.0.jar mapstruct-1.1.0.Final.jar tomcat-annotations-api-8
+ .5.27.jar logback-classic-1.1.11.jar log4j-over-slf4j-1.7.25.jar vali
+ dation-api-1.1.0.Final.jar jackson-databind-2.8.10.jar tomcat-embed-w
+ ebsocket-8.5.27.jar mybatis-3.4.1.jar tomcat-juli-8.5.27.jar spring-p
+ lugin-core-1.2.0.RELEASE.jar spring-boot-starter-1.5.10.RELEASE.jar s
+ pring-data-redis-1.8.10.RELEASE.jar logback-core-1.1.11.jar fastjson-
+ 1.2.31.jar spring-data-keyvalue-1.2.10.RELEASE.jar commons-pool2-2.4.
+ 3.jar springfox-core-2.7.0.jar snakeyaml-1.17.jar spring-context-4.3.
+ 14.RELEASE.jar spring-tx-4.3.14.RELEASE.jar spring-webmvc-4.3.14.RELE
+ ASE.jar jackson-core-2.8.10.jar spring-aop-4.3.14.RELEASE.jar spring-
+ web-4.3.14.RELEASE.jar swagger-annotations-1.5.13.jar javassist-3.21.
+ 0-GA.jar mybatis-spring-1.3.0.jar jul-to-slf4j-1.7.25.jar classmate-1
+ .3.4.jar tomcat-jdbc-8.5.27.jar jboss-logging-3.3.1.Final.jar spring-
+ boot-starter-data-redis-1.5.10.RELEASE.jar jedis-2.9.0.jar slf4j-api-
+ 1.7.22.jar spring-boot-1.5.10.RELEASE.jar spring-boot-starter-tomcat-
+ 1.5.10.RELEASE.jar spring-boot-starter-logging-1.5.10.RELEASE.jar spr
+ ing-plugin-metadata-1.2.0.RELEASE.jar spring-beans-4.3.14.RELEASE.jar
+  guava-19.0.jar tomcat-embed-el-8.5.27.jar springfox-schema-2.7.0.jar
+Main-Class: com.flaky.lifecycle.manager.flakylifecyclemanager.FlakyLif
+ ecycleManagerApplication
+

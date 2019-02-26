@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/flaky-entity/flaky-entity.iml" filepath="$PROJECT_DIR$/flaky-entity/flaky-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flaky-lifecycle-manager/flaky-lifecycle-manager.iml" filepath="$PROJECT_DIR$/flaky-lifecycle-manager/flaky-lifecycle-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flaky-manager-parent.iml" filepath="$PROJECT_DIR$/flaky-manager-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flaky-maven-extension/flaky-maven-extension.iml" filepath="$PROJECT_DIR$/flaky-maven-extension/flaky-maven-extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flaky-persistence/flaky-persistence.iml" filepath="$PROJECT_DIR$/flaky-persistence/flaky-persistence.iml" />
+    </modules>
+  </component>
+</project>
