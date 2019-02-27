@@ -20,11 +20,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring.boot.version>1.5.10.RELEASE</spring.boot.version>
-        <mybatis.version>3.4.1</mybatis.version>
-        <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
         <poi-ooxml.version>3.15</poi-ooxml.version>
         <xmlbeans.version>2.6.0</xmlbeans.version>
-        <mybatis-paginator.version>1.0.4</mybatis-paginator.version>
         <fastjson.version>1.2.31</fastjson.version>
         <fastdfs-client-java.version>1.25</fastdfs-client-java.version>
         <commons-lang3.version>3.4</commons-lang3.version>
@@ -83,11 +80,6 @@
                 <version>5.1.40</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-spring-boot.version}</version>
-            </dependency>
 
             <dependency>
                 <!-- Import dependency management from Spring Boot -->
@@ -96,11 +88,6 @@
                 <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis</artifactId>
-                <version>${mybatis.version}</version>
             </dependency>
 
             <dependency>
@@ -113,12 +100,6 @@
                 <groupId>org.apache.poi</groupId>
                 <artifactId>poi-ooxml</artifactId>
                 <version>${poi-ooxml.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mybatis.paginator</groupId>
-                <artifactId>mybatis-paginator</artifactId>
-                <version>${mybatis-paginator.version}</version>
             </dependency>
 
             <dependency>

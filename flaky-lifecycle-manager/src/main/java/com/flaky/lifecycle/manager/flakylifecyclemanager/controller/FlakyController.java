@@ -1,7 +1,6 @@
 package com.flaky.lifecycle.manager.flakylifecyclemanager.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.flaky.lifecycle.manager.flakylifecyclemanager.dao.CommonDao;
 import com.flaky.lifecycle.manager.flakylifecyclemanager.model.Result;
 import com.flaky.lifecycle.manager.flakylifecyclemanager.util.PageBean;
 import com.flaky.persistence.mapper.FlakyHistoryMapper;
@@ -9,20 +8,21 @@ import com.flaky.persistence.mapper.FlakyMapper;
 import com.flaky.persistence.model.Flaky;
 import com.flaky.persistence.model.FlakyExample;
 import com.flaky.persistence.model.FlakyHistory;
+import com.flaky.persistence.model.FlakyHistoryExample;
 import com.github.pagehelper.PageHelper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -32,7 +32,8 @@ import java.util.List;
 @RequestMapping(value = "/flaky")
 @Api(value = "FlakyController", tags = "Flaky接口列表")
 @CrossOrigin
-public class FlakyController extends CommonDao {
+@Component
+public class FlakyController{
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private SqlSession sqlSession;
@@ -54,12 +55,14 @@ public class FlakyController extends CommonDao {
     @RequestMapping("/getFlakyChart")
     @ResponseBody
     public Result<?> getFlakyChart(@RequestParam("projectId") String projectId ) {
-        FlakyExample flakyExample = new FlakyExample();
-        flakyExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyStatusEqualTo(0);
+        FlakyExample flakyUnhandleExample = new FlakyExample();
+        flakyUnhandleExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyStatusEqualTo(0);
 
-        long countUnhandle = flakyMapper.countByExample(flakyExample);
-        flakyExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyStatusEqualTo(1);
-        long countHandle = flakyMapper.countByExample(flakyExample);
+        long countUnhandle = flakyMapper.countByExample(flakyUnhandleExample);
+
+        FlakyExample flakyHandleCountExample = new FlakyExample();
+        flakyHandleCountExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyStatusEqualTo(1);
+        long countHandle = flakyMapper.countByExample(flakyHandleCountExample);
 
         JSONObject result = new JSONObject();
         result.put("unhandleCount",countUnhandle);
@@ -71,23 +74,19 @@ public class FlakyController extends CommonDao {
     @RequestMapping("/getFlakyList")
     @ResponseBody
     public Result<?> getFlakyList(@RequestParam("projectId") String projectId ,@RequestParam("flakyStatus") Integer flakyStatus , Integer currentPage, Integer pageSize ) {
-        Flaky flaky = new Flaky();
-        flaky.setFlakyId(1);
-        flaky.setClassName("com.graphql.study.demo.service.imp.UserServiceImpTest");
-        flaky.setUnitTestName("getRandomNumber");
-        flaky.setFlakyStatus(0);
-        flaky.setDetectCount(10);
-        flaky.setLastDetectTime(new Date());
-        flaky.setLastSha1("feb62f765fafb2efad16295faaaa21f302c647d7");
-        flaky.setProjectId("com.flaky.lifecycle.manager.flaky-lifecycle-manager");
+
+        FlakyExample flakyExample = new FlakyExample();
+        flakyExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyStatusEqualTo(flakyStatus);
+        List<Flaky> allItems = flakyMapper.selectByExample(flakyExample);
 
         //设置分页信息，分别是当前页数和每页显示的总记录数【记住：必须在mapper接口中的方法执行之前设置该分页信息】
         PageHelper.startPage(currentPage, pageSize);
 
-        List<Flaky> allItems = new ArrayList<>();        //全部记录
-        allItems.add(flaky);
-        int countNums = 35;            //总记录数
-        PageBean<Flaky> pageData = new PageBean<>(currentPage, pageSize, countNums);
+        FlakyExample flakyCountExample = new FlakyExample();
+        flakyCountExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyStatusEqualTo(0);
+
+        long countNums = flakyMapper.countByExample(flakyCountExample);
+        PageBean<Flaky> pageData = new PageBean<>(currentPage, pageSize, (int)countNums);
         pageData.setItems(allItems);
         return Result.successData(pageData);
     }
@@ -98,19 +97,18 @@ public class FlakyController extends CommonDao {
     public Result<?> getFlakyHistoryList(@RequestParam("flakyId") Integer flakyId,
                                          @RequestParam("projectId") String projectId, Integer currentPage, Integer pageSize) {
 
-        FlakyHistory flakyHistory = new FlakyHistory();
-        flakyHistory.setFlakyId(1);
-        flakyHistory.setClassName("com.graphql.study.demo.service.imp.UserServiceImpTest");
-        flakyHistory.setUnitTestName("getRandomNumber");
-        flakyHistory.setFlakyStatus(0);
-        flakyHistory.setDetectCount(10);
-        flakyHistory.setDetectTime(new Date());
-        flakyHistory.setSha1("feb62f765fafb2efad16295faaaa21f302c647d7");
-        flakyHistory.setProjectId("com.flaky.lifecycle.manager.flaky-lifecycle-manager");
-        List<FlakyHistory> allItems = new ArrayList<>();        //全部记录
-        allItems.add(flakyHistory);
-        int countNums = 35;            //总记录数
-        PageBean<FlakyHistory> pageData = new PageBean<>(currentPage, pageSize, countNums);
+        FlakyHistoryExample flakyHistoryExample = new FlakyHistoryExample ();
+        flakyHistoryExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyIdEqualTo(flakyId);
+        List<FlakyHistory> allItems = flakyHistoryMapper.selectByExample(flakyHistoryExample);
+
+        //设置分页信息，分别是当前页数和每页显示的总记录数【记住：必须在mapper接口中的方法执行之前设置该分页信息】
+        PageHelper.startPage(currentPage, pageSize);
+
+        FlakyHistoryExample flakyHistoryCountExample = new FlakyHistoryExample();
+        flakyHistoryCountExample.createCriteria().andProjectIdEqualTo(projectId).andFlakyIdEqualTo(flakyId);
+
+        long countNums = flakyHistoryMapper.countByExample(flakyHistoryCountExample);
+        PageBean<FlakyHistory> pageData = new PageBean<>(currentPage, pageSize, (int)countNums);
         pageData.setItems(allItems);
         return Result.successData(pageData);
     }
@@ -119,13 +117,19 @@ public class FlakyController extends CommonDao {
     @RequestMapping("/getFlakyEnvDetail")
     @ResponseBody
     public Result<?> getFlakyEnvDetail(@RequestParam("flakyId") Integer flakyId,
-                                       @RequestParam("projectId") String projectId ) {
+                                       @RequestParam("projectId") String projectId,@RequestParam(name = "flakyHistoryId",required=false) Integer flakyHistoryId ) {
 
         FlakyHistory flakyHistory = new FlakyHistory();
         flakyHistory.setEnvironmentDetail("{\n" +
                 "    \"jdkversion\": \"1.5.0\",\n" +
                 "    \"operationSystem\": \"window\"\n" +
                 "}");
+
+        FlakyHistoryExample flakyHistoryExample = new FlakyHistoryExample ();
+        flakyHistoryExample.createCriteria().andFlakyHistoryIdEqualTo(flakyHistoryId);
+        List<FlakyHistory> allItems = flakyHistoryMapper.selectByExample(flakyHistoryExample);
+        FlakyHistory flakyHistory1 = allItems.stream().findFirst().orElse(new FlakyHistory());
+
         return Result.successData(JSONObject.parseObject(flakyHistory.getEnvironmentDetail()));
     }
 
@@ -135,8 +139,12 @@ public class FlakyController extends CommonDao {
     public Result<?> updateFlakyTestStatus(@RequestParam("flakyId") Integer flakyId,
                             @RequestParam("projectId") String projectId,
                                @RequestParam("flakyStatus") int flakyStatus) {
+        Flaky flaky = new Flaky();
+        flaky.setFlakyId(flakyId);
+        flaky.setFlakyStatus(flakyStatus);
+        int successCount = flakyMapper.updateByPrimaryKeySelective(flaky);
 
-        return Result.success();
+        return successCount > 0 ? Result.success(): Result.fail();
     }
 
 }

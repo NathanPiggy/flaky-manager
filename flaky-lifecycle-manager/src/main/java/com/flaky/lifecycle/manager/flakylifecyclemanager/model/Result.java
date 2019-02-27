@@ -72,8 +72,16 @@ public class Result<T> implements Serializable {
         return new Result<T>(StatusCode.SUCCESS, message);
     }
 
+    public static <T> Result<T> fail(String message) {
+        return new Result<T>(StatusCode.FAILURE, message);
+    }
+
     public static <T> Result<T> success() {
         return success("操作成功!");
+    }
+
+    public static <T> Result<T> fail() {
+        return fail("操作失败!");
     }
 
     public static <T> Result<T> successData(T data) {
