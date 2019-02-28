@@ -7,21 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9717565f-9d14-492b-99b6-7d79f2a7bf12" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_0_9_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_4_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-lifecycle-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-lifecycle-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/FlakyLifecycleManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/FlakyLifecycleManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/controller/FlakyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/controller/FlakyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/model/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/model/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-persistence/flaky-persistence.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-persistence/flaky-persistence.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/flaky-persistence/target/" />
     <ignored path="$PROJECT_DIR$/flaky-lifecycle-manager/target/" />
@@ -40,8 +28,8 @@
       <file leaf-file-name="FlakyFailCaseHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
-              <caret line="193" column="13" selection-start-line="193" selection-start-column="13" selection-end-line="193" selection-end-column="13" />
+            <state relative-caret-position="38">
+              <caret line="102" column="49" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,11 +37,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="JgitUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="103" column="3" selection-start-line="103" selection-start-column="1" selection-end-line="106" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RandomUtilTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+            <state relative-caret-position="145">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
                 <element signature="e#199#200#0" expanded="true" />
                 <element signature="e#259#260#0" expanded="true" />
@@ -62,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlakyController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FlakyController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/controller/FlakyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="143" column="40" selection-start-line="143" selection-start-column="40" selection-end-line="143" selection-end-column="40" />
+            <state relative-caret-position="133">
+              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,14 +74,10 @@
       <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/model/Result.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="82" column="40" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+            <state relative-caret-position="1178">
+              <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
               <folding>
-                <element signature="e#1539#1540#0" expanded="true" />
-                <element signature="e#1578#1579#0" expanded="true" />
-                <element signature="e#1783#1784#0" expanded="true" />
-                <element signature="e#1865#1866#0" expanded="true" />
-                <element signature="e#1916#1917#0" expanded="true" />
+                <element signature="e#1777#1778#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,15 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1729">
               <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="31" column="50" selection-start-line="31" selection-start-column="50" selection-end-line="31" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -228,21 +212,21 @@
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/PageBean.java" />
         <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/B.java" />
         <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/KeyWordCatcher.java" />
-        <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java" />
         <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/mojo/Flaky.java" />
         <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/mojo/FlakyBean.java" />
         <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/DataBaseUtil.java" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/dao/SqlSessionDaoSupport.java" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/dao/CommonDao.java" />
-        <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java" />
-        <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/FlakyLifecycleManagerApplication.java" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/pom.xml" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/model/Result.java" />
         <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/controller/FlakyController.java" />
+        <option value="$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java" />
+        <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java" />
+        <option value="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java" />
       </list>
     </option>
   </component>
@@ -295,7 +279,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -364,7 +347,26 @@
               <item name="flaky-lifecycle-manager" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="flakylifecyclemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-lifecycle-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-lifecycle-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
@@ -400,10 +402,71 @@
               <item name="flakylifecyclemanager" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="extension" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="extension" type="462c0819:PsiDirectoryNode" />
+              <item name="processor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flaky-manager-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flaky-manager-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="flaky-maven-extension" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -468,7 +531,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FlakyLifecycleManagerApplication">
+  <component name="RunManager" selected="Application.JgitUtil">
+    <configuration name="JgitUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.flaky.maven.extension.util.JgitUtil" />
+      <module name="flaky-maven-extension" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.flaky.maven.extension.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="KeyWordCatcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.flaky.maven.extension.util.KeyWordCatcher" />
       <module name="flaky-maven-extension" />
@@ -564,9 +638,11 @@
       <item itemvalue="JUnit.JgitTest" />
       <item itemvalue="JUnit.JgitTest.test3" />
       <item itemvalue="Application.KeyWordCatcher" />
+      <item itemvalue="Application.JgitUtil" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.JgitUtil" />
         <item itemvalue="Application.KeyWordCatcher" />
         <item itemvalue="JUnit.JgitTest.test3" />
         <item itemvalue="JUnit.JgitTest" />
@@ -590,8 +666,18 @@
       <workItem from="1551113913590" duration="1301000" />
       <workItem from="1551232454082" duration="2678000" />
       <workItem from="1551248570470" duration="5590000" />
-      <workItem from="1551280853270" duration="1806000" />
+      <workItem from="1551280853270" duration="1960000" />
+      <workItem from="1551317679174" duration="1675000" />
+      <workItem from="1551368735644" duration="3509000" />
     </task>
+    <task id="LOCAL-00001" summary="Update the report system">
+      <created>1551284824685</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551284824686</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -627,7 +713,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77709000" />
+    <option name="totallyTimeSpent" value="83047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -644,7 +730,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="10" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5004042" side_tool="true" weight="0.65309733" />
-      <window_info anchor="right" id="Maven Projects" order="4" visible="true" weight="0.17865804" />
+      <window_info anchor="right" id="Maven Projects" order="4" weight="0.16329831" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="CDI" order="0" />
       <window_info id="Capture Tool" order="7" />
@@ -653,18 +739,18 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4987874" weight="0.44247788" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4987874" weight="0.44148937" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32920355" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32920355" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72433305" weight="0.4574468" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32978722" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72433305" weight="0.34042552" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.5858407" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7728375" weight="0.63829786" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15602264" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.7728375" visible="true" weight="0.53900707" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24413905" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -683,6 +769,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update the report system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the report system" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -692,8 +782,14 @@
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -900,13 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/KeyWordCatcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -949,27 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-          <folding>
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="193" column="13" selection-start-line="193" selection-start-column="13" selection-end-line="193" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,25 +1088,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/model/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="82" column="40" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
+        <state relative-caret-position="1178">
+          <caret line="82" column="40" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="40" />
           <folding>
-            <element signature="e#1539#1540#0" expanded="true" />
-            <element signature="e#1578#1579#0" expanded="true" />
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-            <element signature="e#1916#1917#0" expanded="true" />
+            <element signature="e#1777#1778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/main/java/com/flaky/lifecycle/manager/flakylifecyclemanager/controller/FlakyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="143" column="40" selection-start-line="143" selection-start-column="40" selection-end-line="143" selection-end-column="40" />
+        <state relative-caret-position="133">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="e#199#200#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="102" column="49" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="103" column="3" selection-start-line="103" selection-start-column="1" selection-end-line="106" selection-end-column="7" />
         </state>
       </provider>
     </entry>

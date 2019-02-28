@@ -68,26 +68,36 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
     @Override
     public void projectFailed(ExecutionEvent event) {
         System.out.println("You Can Manage This Project's Flaky Test Here: http://134.175.194.57:10080/flaky/index?projectId=flaky-lifecycle-manager");
-        //System.out.println("System.getProperty(\"user.dir\")="+System.getProperty("user.dir"));//user.dir指定了当前的路径
+        System.out.println("System.getProperty(\"user.dir\")="+System.getProperty("user.dir"));//user.dir指定了当前的路径
 
         SAXReader reader = new SAXReader();
         Connection connection = null;
         Statement statement = null;
         int flakyStatus = 0;
         String projectId = "";
+        System.out.println("###################### 1");
+        JgitUtil.init();
         HashMap<String,String> diffFileMap = JgitUtil.getDiffFileList();
+        System.out.println("###################### 2");
         String lastSha1 = diffFileMap.get("currentSha1");
+        System.out.println("###################### 3");
+
         Integer detectCount = 1;
 
         try {
-            connection = DataBaseUtil.getDbConnection();
-            statement = DataBaseUtil.getDbStatement(connection);
+            System.out.println("###################### 4");
 
+            connection = DataBaseUtil.getDbConnection();
+            System.out.println("###################### 5");
+
+            statement = DataBaseUtil.getDbStatement(connection);
+            System.out.println("###################### 6");
             File file = new File(System.getProperty("user.dir") + "/target/surefire-reports/");//File类型可以是文件也可以是文件夹
             File[] fileList = file.listFiles();//将该目录下的所有文件放置在一个File类型的数组中
             List fileWithXmlSubfix = new ArrayList<File>();
+            System.out.println("###################### fileList.length" + fileList.length);
             for(File fileOrgin : fileList){
-               // System.out.println("###################### file1" + fileOrgin.getName());
+               System.out.println("###################### file1" + fileOrgin.getName());
                 if(fileOrgin.getName().indexOf("xml") > 0){
                     Document sureFireXml = reader.read(fileOrgin);
                     List<Element> testcaseTagList = sureFireXml.selectNodes("testcase");
@@ -127,7 +137,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
             for (Iterator i = root.elementIterator("artifactId"); i.hasNext(); ) {
                 artifcactIdTag = (Element) i.next();
                 projectId =  artifcactIdTag.getStringValue();
-                //System.out.print("artifactId:" + projectId);
+                System.out.print("artifactId:" + projectId);
             }
 
         } catch (Exception e) {

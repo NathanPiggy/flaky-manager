@@ -3,6 +3,7 @@ package com.flaky.maven.extension.util;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.diff.DiffEntry;
+import org.eclipse.jgit.errors.RepositoryNotFoundException;
 import org.eclipse.jgit.lib.ObjectReader;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
@@ -24,16 +25,35 @@ public class JgitUtil {
     static Git git;
     static Repository repository;
 
-    {
+    public static void init(){
         String gitFilePath = System.getProperty("user.dir");
         File root = new File(gitFilePath);
         try {
+
             git = Git.open(root);
             repository = git.getRepository();
 
-        } catch (IOException e) {
+        } catch (final RepositoryNotFoundException rnfe) {
+            final File gitRoot = getGitRootIfItExistsInOneOfTheParentDirectories(new File(gitFilePath));
+            try {
+                git = Git.open(gitRoot);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            repository = git.getRepository();
+        }catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static File getGitRootIfItExistsInOneOfTheParentDirectories(File candidateDir) {
+        while (candidateDir != null && /* HACK ATTACK! Maybe.... */ !candidateDir.getName().equals("target")) {
+            if (new File(candidateDir, ".git").isDirectory()) {
+                return candidateDir;
+            }
+            candidateDir = candidateDir.getParentFile();
+        }
+        return null;
     }
 
     public static HashMap<String,String> getDiffFileList(){
@@ -80,6 +100,11 @@ public class JgitUtil {
 
         return diffFileMap;
     }
+
+ /*   public static void main(String[] args) {
+        init();
+        HashMap<String,String> hashMap =  getDiffFileList();
+    }*/
 
 
     public static AbstractTreeIterator prepareTreeParser(RevCommit commit) {
