@@ -31,17 +31,17 @@
             for (var i = 1; i <= that.options.totalPages; i++) {
                 i != 1 ? ulDom += '<li>' + i + '</li>' : ulDom += '<li class="sel-page">' + i + '</li>';
             }
-            that.options.jump ? jumpDom = '<input type="text" placeholder="1" class="jump-text jumpText" ><button type="button" class="jump-button" >跳转</button>' : jumpDom = '';
-            content = '<div class="pagger-box"><p class="total-count">'+that.options.totalCount +'</p>&nbsp;&nbsp;<button type="button"  class="turnPage first-page">首页</button>' +
+            that.options.jump ? jumpDom = '<input type="text" placeholder="1" class="jump-text jumpText" ><button type="button" class="jump-button">Jump</button>' : jumpDom = '';
+            content = '<div class="pagger-box"><p class="total-count">'+that.options.totalCount +'</p>&nbsp;&nbsp;<button type="button"  class="turnPage first-page">First</button>' +
                 '<button class="turnPage pre-page">&and;</button>' +
                 '<div class="pageWrap" style="width:' + wrapLength + 'px">' +
                 '<ul class="pageSelect" style="transition:all ' + that.options.slideSpeed + 'ms">' +
                 ulDom +
                 '</ul></div>' +
                 '<button class="turnPage next-page">&and;</button>' +
-                '<button type="button" class="last-page ">尾页</button>' +
+                '<button type="button" class="last-page ">Last</button>' +
                 jumpDom +
-                '<p class="total-pages">共&nbsp;' +that.options.totalPages +'&nbsp;页</p>'+
+                '<p class="total-pages">&nbsp;&nbsp;&nbsp;' +that.options.totalPages +'&nbsp;pages</p>'+
                 '</div>';
             that.el.html(content);
         },
@@ -123,7 +123,6 @@
                 pageIndex == totalPages ? nextPage.attr('disabled', true) : nextPage.attr('disabled', false);
                 that.options.callback(pageIndex);
             }
-
             handles(that.options.pageNo); // 初始化页码位置
         }
     }

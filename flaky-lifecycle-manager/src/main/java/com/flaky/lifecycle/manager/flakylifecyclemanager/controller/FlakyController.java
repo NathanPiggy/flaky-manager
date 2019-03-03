@@ -1,5 +1,6 @@
 package com.flaky.lifecycle.manager.flakylifecyclemanager.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.flaky.lifecycle.manager.flakylifecyclemanager.model.Result;
 import com.flaky.lifecycle.manager.flakylifecyclemanager.util.PageBean;
@@ -47,6 +48,7 @@ public class FlakyController{
     private FlakyHistoryMapper flakyHistoryMapper;
 
     @RequestMapping("/index")
+    //return "/index" for windows and index for "linux"
     public String index(){
         return "/index";
     }
@@ -116,28 +118,26 @@ public class FlakyController{
     @ApiOperation(value = "获取Flaky环境参数接口", notes = "获取Flaky环境参数接口,返回的属性长度不定，需要前端遍历data里面所有的内容依次展示", httpMethod = "POST")
     @RequestMapping("/getFlakyEnvDetail")
     @ResponseBody
-    public Result<?> getFlakyEnvDetail(@RequestParam("flakyId") Integer flakyId,
-                                       @RequestParam("projectId") String projectId,@RequestParam(name = "flakyHistoryId",required=false) Integer flakyHistoryId ) {
+    public Result<?> getFlakyEnvDetail(@RequestParam("flakyHistoryId") Integer flakyHistoryId ) {
 
-        FlakyHistory flakyHistory = new FlakyHistory();
+  /*      FlakyHistory flakyHistory = new FlakyHistory();
         flakyHistory.setEnvironmentDetail("{\n" +
                 "    \"jdkversion\": \"1.5.0\",\n" +
                 "    \"operationSystem\": \"window\"\n" +
-                "}");
+                "}");*/
 
         FlakyHistoryExample flakyHistoryExample = new FlakyHistoryExample ();
         flakyHistoryExample.createCriteria().andFlakyHistoryIdEqualTo(flakyHistoryId);
         List<FlakyHistory> allItems = flakyHistoryMapper.selectByExample(flakyHistoryExample);
         FlakyHistory flakyHistory1 = allItems.stream().findFirst().orElse(new FlakyHistory());
 
-        return Result.successData(JSONObject.parseObject(flakyHistory.getEnvironmentDetail()));
+        return Result.successData(JSONArray.parseArray(flakyHistory1.getEnvironmentDetail()));
     }
 
     @ApiOperation(value = "更新Flaky test状态接口", notes = "更新Flaky test状态接口", httpMethod = "POST")
     @RequestMapping("/updateFlakyTestStatus")
     @ResponseBody
     public Result<?> updateFlakyTestStatus(@RequestParam("flakyId") Integer flakyId,
-                            @RequestParam("projectId") String projectId,
                                @RequestParam("flakyStatus") int flakyStatus) {
         Flaky flaky = new Flaky();
         flaky.setFlakyId(flakyId);

@@ -37,7 +37,7 @@ public interface FlakyMapper extends Serializable {
         "class_name, unit_test_name, ",
         "detect_count, project_id)",
         "values (#{flakyId,jdbcType=INTEGER}, #{flakyStatus,jdbcType=INTEGER}, ",
-        "#{lastDetectTime,jdbcType=TIMESTAMP}, #{lastSha1,jdbcType=VARCHAR}, ",
+        "#{lastDetectTime,jdbcType=DATE}, #{lastSha1,jdbcType=VARCHAR}, ",
         "#{className,jdbcType=VARCHAR}, #{unitTestName,jdbcType=VARCHAR}, ",
         "#{detectCount,jdbcType=INTEGER}, #{projectId,jdbcType=VARCHAR})"
     })
@@ -50,7 +50,7 @@ public interface FlakyMapper extends Serializable {
     @Results({
         @Result(column="flaky_id", property="flakyId", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="flaky_status", property="flakyStatus", jdbcType=JdbcType.INTEGER),
-        @Result(column="last_detect_time", property="lastDetectTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="last_detect_time", property="lastDetectTime", jdbcType=JdbcType.DATE),
         @Result(column="last_sha_1", property="lastSha1", jdbcType=JdbcType.VARCHAR),
         @Result(column="class_name", property="className", jdbcType=JdbcType.VARCHAR),
         @Result(column="unit_test_name", property="unitTestName", jdbcType=JdbcType.VARCHAR),
@@ -63,7 +63,7 @@ public interface FlakyMapper extends Serializable {
     @Results({
         @Result(column="flaky_id", property="flakyId", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="flaky_status", property="flakyStatus", jdbcType=JdbcType.INTEGER),
-        @Result(column="last_detect_time", property="lastDetectTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="last_detect_time", property="lastDetectTime", jdbcType=JdbcType.DATE),
         @Result(column="last_sha_1", property="lastSha1", jdbcType=JdbcType.VARCHAR),
         @Result(column="class_name", property="className", jdbcType=JdbcType.VARCHAR),
         @Result(column="unit_test_name", property="unitTestName", jdbcType=JdbcType.VARCHAR),
@@ -82,7 +82,7 @@ public interface FlakyMapper extends Serializable {
     @Results({
         @Result(column="flaky_id", property="flakyId", jdbcType=JdbcType.INTEGER, id=true),
         @Result(column="flaky_status", property="flakyStatus", jdbcType=JdbcType.INTEGER),
-        @Result(column="last_detect_time", property="lastDetectTime", jdbcType=JdbcType.TIMESTAMP),
+        @Result(column="last_detect_time", property="lastDetectTime", jdbcType=JdbcType.DATE),
         @Result(column="last_sha_1", property="lastSha1", jdbcType=JdbcType.VARCHAR),
         @Result(column="class_name", property="className", jdbcType=JdbcType.VARCHAR),
         @Result(column="unit_test_name", property="unitTestName", jdbcType=JdbcType.VARCHAR),
@@ -103,7 +103,7 @@ public interface FlakyMapper extends Serializable {
     @Update({
         "update flaky",
         "set flaky_status = #{flakyStatus,jdbcType=INTEGER},",
-          "last_detect_time = #{lastDetectTime,jdbcType=TIMESTAMP},",
+          "last_detect_time = #{lastDetectTime,jdbcType=DATE},",
           "last_sha_1 = #{lastSha1,jdbcType=VARCHAR},",
           "class_name = #{className,jdbcType=VARCHAR},",
           "unit_test_name = #{unitTestName,jdbcType=VARCHAR},",

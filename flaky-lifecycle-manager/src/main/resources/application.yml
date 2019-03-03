@@ -12,6 +12,8 @@ spring:
         username: pzyf
     resources:
         static-locations: file:///D:/Temp/resources/static/,file:///D:/Temp/resources/resource/templates/
+        cache-period: 0
+        #static-locations: file:/data/deploy/flaky/resources/static/,file:/data/deploy/flaky/resources/templates/
 string:
     thymeleaf:
         cache: false

@@ -1,7 +1,7 @@
 package com.flaky.persistence.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class FlakyHistory implements Serializable {
     private Integer flakyHistoryId;

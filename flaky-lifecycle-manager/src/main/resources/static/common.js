@@ -1,17 +1,18 @@
 
-var initStatus = 0,projectId = getQueryString('projectId'),curflakyId = '';
+var initStatus = 0,projectId = getQueryString('projectId'),curflakyId = '',currentPage = 1;
 $(function() {
     $('#project').text(projectId);
 
-    $("table tbody").on("click","tr",function() {
+    $("#historyTable table tbody").on("click","tr",function() {
         var id = $(this).attr("data-id");
         // toast(id);
         getDetail(id);
     })
+
     // initEchart(81,28);
     // pageList(11,32);
     getChart();
-    getList(projectId,1,5);
+    getList(projectId,1,6);
 
 });
 
@@ -25,7 +26,7 @@ function getDetail(id){
         type: 'POST',
         url: '/flaky/getFlakyEnvDetail',
         dataType: 'json',
-        data: { projectId: projectId ,flakyId:id},
+        data: { flakyHistoryId:id},
         success: function (res) {
             if (res.status === 200) {
                 var paramStr = '';
@@ -44,9 +45,10 @@ function getDetail(id){
 function tabLabel(status,label){
     $('.tabLabel label').removeClass('active');
     $(label).addClass('active');
-    $('.tableGrid div').hide();
-    initStatus = status
-    getList(projectId,1,5);
+    $('.tableGrid div#newFound,.tableGrid div#done').hide();
+    initStatus = status;
+    currentPage = 1;
+    getList(projectId,1,6);
     if(status===0){
         $('#newFound').show();
     }else {
@@ -90,7 +92,7 @@ function initEchart(unhandle,handle){
 
             var option = {
                 title : {
-                    text: 'BUG处理进度',
+                    text: 'Bugs Processing Progress',
                     padding:16,
                     textStyle:{
                         color:'#ddd',
@@ -101,25 +103,46 @@ function initEchart(unhandle,handle){
                 legend: {
                     orient : 'vertical',
                     x : 'right',
-                    data:['未处理','已处理'],
+                    data:['Unhandled','Handled'],
                     textStyle:{
                         color:'#999'
                     }
                 },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
                 toolbox: {
                     show : false,
                 },
-                // calculable : true,
+                visualMap: {
+                    show: false,
+                    min: 80,
+                    max: 600,
+                    inRange: {
+                        colorLightness: [0, 1]
+                    }
+                },
                 series : [
                     {
-                        name:'发现BUG',
+                        name:'Detected Bugs',
                         type:'pie',
                         radius : '55%',
                         center: ['50%', '60%'],
+                        startAngle: 40,
                         data:[
-                            {value:unhandle, name:'未处理'},
-                            {value:handle, name:'已处理'}
-                        ]
+                            {value:unhandle, name:'Unhandled'},
+                            {value:handle, name:'Handled'}
+                        ],
+                        itemStyle:{
+                            normal: {
+                                labelLine: {
+                                    show: true,
+                                    length:3,
+                                    length2:3
+                                }
+                            }
+                        }
                     }
                 ]
             };
@@ -130,7 +153,9 @@ function initEchart(unhandle,handle){
 }
 function history(id) {
     curflakyId = id;
-    getHisList(id,1,5);
+    currentPage = 1;
+    getHisList(id,1,6);
+    window.event.stopPropagation();
 }
 
 function changeStatus(id) {
@@ -141,13 +166,14 @@ function changeStatus(id) {
         data: {projectId: projectId, flakyStatus: 1 - initStatus, flakyId: id},
         success: function (res) {
             if (res.status === 200) {
-                getList(projectId, 1, 5);
-                toast('状态修改成功');
+                getList(projectId, 1, 6);
+                toast('Change status successfully!');
             } else {
                 toast(res.message);
             }
         }
     });
+    window.event.stopPropagation();
 }
 
 function getList(id,cur,size) {
@@ -158,23 +184,25 @@ function getList(id,cur,size) {
         data: { projectId:id,flakyStatus:initStatus,currentPage:cur,pageSize:size},
         success: function(res){
             if(res.status===200){
-                var trStr = '',statusStr = (initStatus===0?'未处理':'已处理');
-                for (var i = 0;i<res.data.item.length;i++){
-                    trStr += '<tr data-id="'+res.data.item[i].flakyId+'"><td>'+res.data.item[i].className+'</td>';
-                    trStr += '<td>'+res.data.item[i].unitTestName+'</td>';
-                    trStr += '<td>'+res.data.item[i].detectCount+'</td>';
-                    trStr += '<td>'+formatUnixtimestamp(res.data.item[i].lastDetectTime)+'</td>';
-                    trStr += '<td>'+res.data.item[i].flakyId+'</td>';
+                console.log(res.data.items);
+                var trStr = '',statusStr = (initStatus===0?'Unhandled':'Handled'),markStatus =  (initStatus===0?'Handled':'Unhandled');
+                for (var i = 0;i<res.data.items.length;i++){
+                    trStr += '<tr data-id="'+res.data.items[i].flakyId+'"><td onmouseover="overShow('+res.data.items[i].className+')" onmouseout="outHide()">'+res.data.items[i].className+'</td>';
+                    trStr += '<td>'+res.data.items[i].unitTestName+'</td>';
+                    trStr += '<td>'+res.data.items[i].detectCount+'</td>';
+                    trStr += '<td>'+formatUnixtimestamp(res.data.items[i].lastDetectTime)+'</td>';
+                    trStr += '<td>'+res.data.items[i].flakyId+'</td>';
                     trStr += '<td>'+statusStr+'</td>';
-                    trStr += '<td> <a class="toHistory" onclick="history('+res.data.item[i].flakyId+')">查看历史</a><a class="statusSwitch" onclick="changeStatus('+res.data.item[i].flakyId+')">标记为'+statusStr+'</a></td></tr>';
+                    trStr += '<td> <a class="statusSwitch" onclick="changeStatus('+res.data.items[i].flakyId+')">Mark as '+markStatus+'</a><a class="toHistory" onclick="history('+res.data.items[i].flakyId+')">History</a></td></tr>';
                 }
                 if(initStatus===0){
                     $('#newFound table tbody').html(trStr);
                 }else{
-                    $('#newFound table tbody').html(trStr);
+                    $('#done table tbody').html(trStr);
                 }
                 if(cur===1){
-                    pageList(res.data.totalPage,res.data.totalNum)
+                    console.log('current:',cur);
+                    pageList(res.data.totalPage,res.data.totalNum);
                 }
             }else{
                 toast(res.message);
@@ -186,15 +214,27 @@ function getList(id,cur,size) {
     })
 }
 
+function overShow(str) {
+    $('.showClassName>span').text(str);
+    $('.showClassName').css({left:event.clientX,top:event.clientY}).show();
+}
+
+function outHide() {
+    $('.showClassName').hide();
+}
+
 function pageList(total,nums){
     $('#box').paging({
         initPageNo: 1, // 初始页码
         totalPages: total, //总页数
-        totalCount: '共' + nums + '条', // 条目总数
+        totalCount: nums + '  Records', // 条目总数
         slideSpeed: 600, // 缓动速度。单位毫秒
         jump: true, //是否支持跳转
         callback: function(page) { // 回调函数
-            getList(projectId,page,5);
+            if(currentPage!==page){
+                getList(projectId,page,6);
+                currentPage = page;
+            }
             console.log(page)
         }
     })
@@ -203,21 +243,21 @@ function pageList(total,nums){
 function getHisList(id,cur,size) {
     $.ajax({
         type: 'POST',
-        url: '/flaky/getFlakyList',
+        url: '/flaky/getFlakyHistoryList',
         dataType: 'json',
         data: { projectId:projectId,flakyId:id,currentPage:cur,pageSize:size},
         success: function(res){
             if(res.status===200){
                 $('.content').hide();
                 $('.historyContent').show();
-                var trStr = '',statusStr = (initStatus===0?'未处理':'已处理');
-                for (var i = 0;i<res.data.item.length;i++){
-                    trStr += '<tr data-id="'+res.data.item[i].flakyId+'"><td>'+res.data.item[i].className+'</td>';
-                    trStr += '<td>'+res.data.item[i].unitTestName+'</td>';
-                    trStr += '<td>'+formatUnixtimestamp(res.data.item[i].lastDetectTime)+'</td>';
-                    trStr += '<td>'+res.data.item[i].flakyHistoryId+'</td>';
+                var trStr = '',statusStr = (initStatus===0?'Unhandled':'Handled');
+                for (var i = 0;i<res.data.items.length;i++){
+                    trStr += '<tr data-id="'+res.data.items[i].flakyHistoryId+'"><td>'+res.data.items[i].className+'</td>';
+                    trStr += '<td>'+res.data.items[i].unitTestName+'</td>';
+                    trStr += '<td>'+formatUnixtimestamp(res.data.items[i].detectTime)+'</td>';
+                    trStr += '<td>'+res.data.items[i].flakyHistoryId+'</td>';
                     trStr += '<td>'+statusStr+'</td>';
-                    trStr += '<td>'+res.data.item[i].sha1+'</td></tr>';
+                    trStr += '<td>'+res.data.items[i].sha1+'</td></tr>';
                 }
                 $('#historyTable table tbody').html(trStr);
 
@@ -229,7 +269,7 @@ function getHisList(id,cur,size) {
             }
         },
         error: function(xhr, type){
-            console.log('Ajax error!')
+            console.log('Ajax error!');
         }
     })
 }
@@ -238,29 +278,33 @@ function pageList1(total,nums){
     $('#box1').paging({
         initPageNo: 1, // 初始页码
         totalPages: total, //总页数
-        totalCount: '共' + nums + '条', // 条目总数
+        totalCount: 'total' + nums , // 条目总数
         slideSpeed: 600, // 缓动速度。单位毫秒
         jump: true, //是否支持跳转
         callback: function(page) { // 回调函数
-            getList1(curflakyId,page,5);
-            console.log(page)
+            if(currentPage!==page){
+                getHisList(curflakyId,page,6);
+                currentPage = page;
+            }
+            console.log(page);
         }
     })
 }
 
-
-function formatUnixtimestamp (unixtimestamp){
-    var unixtimestamp = new Date(unixtimestamp*1000);
-    var year = 1900 + unixtimestamp.getYear();
-    var month = "0" + (unixtimestamp.getMonth() + 1);
-    var date = "0" + unixtimestamp.getDate();
-    var hour = "0" + unixtimestamp.getHours();
-    var minute = "0" + unixtimestamp.getMinutes();
-    var second = "0" + unixtimestamp.getSeconds();
-    return year + "-" + month.substring(month.length-2, month.length)  + "-" + date.substring(date.length-2, date.length)
-        + " " + hour.substring(hour.length-2, hour.length) + ":"
-        + minute.substring(minute.length-2, minute.length) + ":"
-        + second.substring(second.length-2, second.length);
+function formatUnixtimestamp (inputTime){
+    var date = new Date(inputTime);
+    var y = date.getFullYear();
+    var m = date.getMonth() + 1;
+    m = m < 10 ? ('0' + m) : m;
+    var d = date.getDate();
+    d = d < 10 ? ('0' + d) : d;
+    var h = date.getHours();
+    h = h < 10 ? ('0' + h) : h;
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    minute = minute < 10 ? ('0' + minute) : minute;
+    second = second < 10 ? ('0' + second) : second;
+    return y + '-' + m + '-' + d + ' ' + h + ':' + minute + ':' + second;
 }
 
 function toast(string){

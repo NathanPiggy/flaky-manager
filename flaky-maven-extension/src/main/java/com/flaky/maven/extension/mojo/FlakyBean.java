@@ -1,7 +1,7 @@
 package com.flaky.maven.extension.mojo;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
 public class FlakyBean implements Serializable {
     private Integer flakyId;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"></meta>
     <title>FlakyManager</title>
-    <link rel="stylesheet" href="/style.css"></link>
+    <link rel="stylesheet" href="/style.css?v=1.1"></link>
 </head>
 <body>
 
@@ -14,42 +14,39 @@
     </div>
     <div class="content">
         <div class="chartBox">
-            <div class="title">项目：<span id="project">111</span></div>
+            <div class="title"><span id="project"></span></div>
             <div id="chartMain" style="height: 300px;"></div>
         </div>
         <div class="tableBox">
             <div class="mainData">
                 <div class="tabLabel">
-                    <label class="active" onclick="tabLabel(0,this)">发现</label>
-                    <label onclick="tabLabel(1,this)">已处理</label>
+                    <label class="active" onclick="tabLabel(0,this)">Unhandled</label>
+                    <label onclick="tabLabel(1,this)">Handled</label>
                 </div>
                 <div class="tableGrid">
                     <div id="newFound" style="display: block">
                         <table>
                             <thead>
                             <tr>
-                                <td>类名</td>
-                                <td>用例名字</td>
-                                <td>发现次数</td>
-                                <td>最后测试时间</td>
+                                <td>Class Name</td>
+                                <td>Case Name</td>
+                                <td>Frequency</td>
+                                <td>Last Detection</td>
                                 <td>FlakyID</td>
-                                <td>状态</td>
-                                <td>操作</td>
+                                <td>Status</td>
+                                <td>Action</td>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-id ='111'>
-                                <td>com.graphql.study.demo.service.imp.UserServiceImpTest</td>
-                                <td>getRandomNumber</td>
-                                <td>3</td>
-                                <td>2019/9/1  15:09:12</td>
-                                <td>111</td>
-                                <td>未处理</td>
-                                <td>
-                                    <a class="toHistory" onclick="history(111)">查看历史</a>
-                                    <a class="statusSwitch" onclick="changeStatus(111)">标记为已处理</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td onmouseover="overShow('sql.handle.com.servlet.common.package.getClassName.java')" onmouseout="outHide()">sql.handle.com.servlet.common.package.getClassName.java</td>
+                                    <td>common.components.class</td>
+                                    <td>4</td>
+                                    <td>2019-03-01 20:30:23</td>
+                                    <td>2</td>
+                                    <td>Unhandled</td>
+                                    <td><a class="statusSwitch" >Mark as Handled</a><a class="toHistory">History</a></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -57,28 +54,17 @@
                         <table>
                             <thead>
                             <tr>
-                                <td>类名</td>
-                                <td>用例名字</td>
-                                <td>发现次数</td>
-                                <td>最后测试时间</td>
+                                <td>Class Name</td>
+                                <td>Case Name</td>
+                                <td>Frequency</td>
+                                <td>Last Detection</td>
                                 <td>FlakyID</td>
-                                <td>状态</td>
-                                <td>操作</td>
+                                <td>Status</td>
+                                <td>Action</td>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-id ='111'>
-                                <td>com.graphql.study.demo.service.imp.UserServiceImpTest</td>
-                                <td>getRandomNumber</td>
-                                <td>3</td>
-                                <td>2019/9/1  15:09:12</td>
-                                <td>111</td>
-                                <td>未处理</td>
-                                <td>
-                                    <a class="toHistory" onclick="history(111)">查看历史</a>
-                                    <a class="statusSwitch" onclick="changeStatus(111)">标记为已处理</a>
-                                </td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -89,30 +75,23 @@
     </div>
     <div class="historyContent">
         <div class="chartBox">
-            <div class="title">项目历史
-                <a href="javascript:void(0);" onclick="backtoIndex()" class="backToHis">返回</a>
+            <div class="title">Project History
+                <a href="javascript:void(0);" onclick="backtoIndex()" class="backToHis">BACK TO LIST</a>
             </div>
             <div class="historyTable" id="historyTable">
                 <table>
                     <thead>
                     <tr>
-                        <td>类名</td>
-                        <td>用例名字</td>
-                        <td>发现时间</td>
+                        <td>Class Name</td>
+                        <td>Case Name</td>
+                        <td>Last Discovery</td>
                         <td>FlakyHistoryID</td>
-                        <td>状态</td>
+                        <td>Status</td>
                         <td>SHA-1</td>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr data-id ='111'>
-                        <td>com.graphql.study.demo.service.imp.UserServiceImpTest</td>
-                        <td>getRandomNumber</td>
-                        <td>2019/9/1  15:09:12</td>
-                        <td>111</td>
-                        <td>未处理</td>
-                        <td>feb62f765fafb2efad16295faaaa21f302c647d7</td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -123,38 +102,27 @@
 
 <div class="popup">
     <div class="popupCont">
-        <h3>环境变量</h3>
+        <h3>Envionment Variables</h3>
         <div class="popupBox">
             <div class="fakeTr">
-                <label><b>参数名字</b></label>
-                <label><b>参数值</b></label>
+                <label><b>Param Name</b></label>
+                <label><b>Param Value</b></label>
             </div>
             <div id="fillBox">
-                <div class="fakeTr">
-                    <label>idea.version </label>
-                    <label>2018.1.6</label>
-                </div>
-                <div class="fakeTr">
-                    <label>java.runtime.name </label>
-                    <label>sun.boot.library.path</label>
-                </div>
-                <div class="fakeTr">
-                    <label>maven.multiModuleProjectDirectory </label>
-                    <label>http://java.oracle.com/</label>
-                </div>
-                <div class="fakeTr">
-                    <label>guice.disable.misplaced.annotation.check</label>
-                    <label>TRUE</label>
-                </div>
+
             </div>
         </div>
-        <a class="closed" onclick="closedPopup()">关闭</a>
+        <a class="closed" onclick="closedPopup()">CLOSE</a>
     </div>
 </div>
 
+<div class="showClassName">
+    <span></span>
+</div>
+
 <script src="/jquery-3.3.1.min.js"></script>
-<script src="/paging.js"></script>
+<script src="/paging.js?v=1.1"></script>
 <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
-<script src="/common.js"></script>
+<script src="/common.js?v=1.1"></script>
 </body>
 </html>

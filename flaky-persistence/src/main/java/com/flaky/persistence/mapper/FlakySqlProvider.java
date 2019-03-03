@@ -37,7 +37,7 @@ public class FlakySqlProvider {
         }
         
         if (record.getLastDetectTime() != null) {
-            sql.VALUES("last_detect_time", "#{lastDetectTime,jdbcType=TIMESTAMP}");
+            sql.VALUES("last_detect_time", "#{lastDetectTime,jdbcType=DATE}");
         }
         
         if (record.getLastSha1() != null) {
@@ -103,7 +103,7 @@ public class FlakySqlProvider {
         }
         
         if (record.getLastDetectTime() != null) {
-            sql.SET("last_detect_time = #{record.lastDetectTime,jdbcType=TIMESTAMP}");
+            sql.SET("last_detect_time = #{record.lastDetectTime,jdbcType=DATE}");
         }
         
         if (record.getLastSha1() != null) {
@@ -136,7 +136,7 @@ public class FlakySqlProvider {
         
         sql.SET("flaky_id = #{record.flakyId,jdbcType=INTEGER}");
         sql.SET("flaky_status = #{record.flakyStatus,jdbcType=INTEGER}");
-        sql.SET("last_detect_time = #{record.lastDetectTime,jdbcType=TIMESTAMP}");
+        sql.SET("last_detect_time = #{record.lastDetectTime,jdbcType=DATE}");
         sql.SET("last_sha_1 = #{record.lastSha1,jdbcType=VARCHAR}");
         sql.SET("class_name = #{record.className,jdbcType=VARCHAR}");
         sql.SET("unit_test_name = #{record.unitTestName,jdbcType=VARCHAR}");
@@ -157,7 +157,7 @@ public class FlakySqlProvider {
         }
         
         if (record.getLastDetectTime() != null) {
-            sql.SET("last_detect_time = #{lastDetectTime,jdbcType=TIMESTAMP}");
+            sql.SET("last_detect_time = #{lastDetectTime,jdbcType=DATE}");
         }
         
         if (record.getLastSha1() != null) {
