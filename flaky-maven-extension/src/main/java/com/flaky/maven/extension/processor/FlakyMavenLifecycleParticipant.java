@@ -15,7 +15,6 @@ public class FlakyMavenLifecycleParticipant extends AbstractMavenLifecyclePartic
     public void afterSessionStart( MavenSession session )
         throws MavenExecutionException
     {
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     }
  
  
@@ -24,7 +23,6 @@ public class FlakyMavenLifecycleParticipant extends AbstractMavenLifecyclePartic
         throws MavenExecutionException
     {
 
-        System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
         flakyFailCaseHandler = new FlakyFailCaseHandler();
         flakyFailCaseHandler.configure(session.getRequest().getExecutionListener());
         session.getRequest().setExecutionListener(flakyFailCaseHandler);
