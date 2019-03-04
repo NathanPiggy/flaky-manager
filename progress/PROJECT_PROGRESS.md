@@ -2,6 +2,9 @@
 
 ## **PROGRESS OF THE PERCENTAGE VIEW**
 
+_++Cut off **2019-03-04**++_
+![FlakyManager_progress](FlakyManager_progress.jpg)
+
 _++Cut off **2019-02-25**++_
 
 ![FlakyManager_02](FlakyManager_02.jpg)
