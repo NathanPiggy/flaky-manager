@@ -108,10 +108,10 @@ public class JgitUtil {
 
 
     public static AbstractTreeIterator prepareTreeParser(RevCommit commit) {
-        System.out.println("commit.getId()="+commit.getId());
-        System.out.println("commit.getId().toString().split="+commit.getId().toString().split(" ")[1]);
+        //System.out.println("commit.getId()="+commit.getId());
+        //System.out.println("commit.getId().toString().split="+commit.getId().toString().split(" ")[1]);
         try (RevWalk walk = new RevWalk(repository)) {
-            System.out.println("commit.getTree().getId()="+commit.getTree().getId());
+            //System.out.println("commit.getTree().getId()="+commit.getTree().getId());
             RevTree tree = walk.parseTree(commit.getTree().getId());
 
             CanonicalTreeParser oldTreeParser = new CanonicalTreeParser();

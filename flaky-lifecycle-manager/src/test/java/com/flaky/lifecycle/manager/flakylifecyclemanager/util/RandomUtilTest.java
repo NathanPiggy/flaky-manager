@@ -8,6 +8,6 @@ public class RandomUtilTest {
 
     @Test
     public void getRandomNumber() {
-        assertTrue(RandomUtil.getRandomNumber() > 1);
+        assertTrue(RandomUtil.getRandomNumber() > 5);
     }
 }

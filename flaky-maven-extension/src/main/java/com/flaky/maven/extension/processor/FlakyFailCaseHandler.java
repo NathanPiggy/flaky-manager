@@ -32,7 +32,10 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
     @Parameter(readonly = true, required= true)
     private String reportedTestsFile;
 
-    public  String tips = "You Can Manage This Project's Flaky Test Here: http://134.175.194.57:10080/flaky/index?projectId=flaky-lifecycle-manager";
+    public  String tips = "|----------------------------------------------------------------------------|\n" +
+            "|  You Can Manage This Project's Flaky Test Here:                            |\n" +
+            "|  http://134.175.194.57:10080/flaky/index?projectId=flaky-lifecycle-manager |\n" +
+            "|----------------------------------------------------------------------------|";
 
     public static String surefirePath = System.getProperty("user.dir") + "/target/surefire-reports/";
 
@@ -44,7 +47,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
     @Override
     public void projectDiscoveryStarted(ExecutionEvent event) {
-        System.out.println("###################### projectDiscoveryStarted");
+        //System.out.println("###################### projectDiscoveryStarted");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -55,11 +58,13 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
     @Override
     public void sessionStarted(ExecutionEvent event) {
-        System.out.println("###################### sessionStarted");
+        //System.out.println("###################### sessionStarted");
         // Check if local has surefile record
         File file = new File(surefirePath);//File类型可以是文件也可以是文件夹
         File[] fileList = file.listFiles();//将该目录下的所有文件放置在一个File类型的数组中
-        if (preLoadMap.size()== 0 && fileList.length > 0 ){
+        //System.out.println("###################### preLoadMap="+preLoadMap + ";fileList="+fileList);
+
+        if (preLoadMap != null && preLoadMap.size()== 0 && fileList != null && fileList.length > 0 ){
             loadLocalSurefireResultToCache(fileList);
         }
         super.sessionStarted(event);
@@ -69,7 +74,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
         SAXReader reader = new SAXReader();
         try {
             for(File fileOrgin : fileList){
-                System.out.println("###################### file1" + fileOrgin.getName());
+                //System.out.println("###################### file1" + fileOrgin.getName());
                 if(fileOrgin.getName().indexOf("xml") > 0){
                     Document sureFireXml = null;
                         sureFireXml = reader.read(fileOrgin);
@@ -102,7 +107,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
     @Override
     public void projectStarted(ExecutionEvent event) {
-        System.out.println("###################### sessionStarted");
+        //System.out.println("###################### sessionStarted");
         super.projectStarted(event);
     }
 
@@ -127,7 +132,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
     }
 
     public static void detectFlakyTests(boolean testResult){
-        System.out.println("System.getProperty(\"user.dir\")="+System.getProperty("user.dir"));//user.dir指定了当前的路径
+        //System.out.println("System.getProperty(\"user.dir\")="+System.getProperty("user.dir"));//user.dir指定了当前的路径
 
         SAXReader reader = new SAXReader();
         Connection connection = null;
@@ -159,9 +164,11 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
             File file = new File(surefirePath);//File类型可以是文件也可以是文件夹
             File[] fileList = file.listFiles();//将该目录下的所有文件放置在一个File类型的数组中
             List fileWithXmlSubfix = new ArrayList<File>();
-           // System.out.println("###################### fileList.length" + fileList.length);
+           // //System.out.println("###################### fileList.length" + fileList.length);
+            if (fileList == null ) return;
+
             for(File fileOrgin : fileList){
-                System.out.println("###################### file1" + fileOrgin.getName());
+                //System.out.println("###################### file1" + fileOrgin.getName());
                 if(fileOrgin.getName().indexOf("xml") > 0){
                     Document sureFireXml = reader.read(fileOrgin);
                     List<Element> testcaseTagList = sureFireXml.selectNodes("//testcase");
@@ -182,7 +189,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
                                 //Save to flaky table
                                 FlakyBean flakyBean = DataBaseUtil.getFlakyRecord(className,unitTestName,statement);
-                            System.out.println("flakyBean="+flakyBean + ";lastSha1="+lastSha1+";flakyStatus="+flakyStatus+";unitTestName+"+unitTestName+";className+"+className);
+                            //System.out.println("flakyBean="+flakyBean + ";lastSha1="+lastSha1+";flakyStatus="+flakyStatus+";unitTestName+"+unitTestName+";className+"+className);
                             Integer addId = null;
                             if(flakyBean == null){
                                 addId = DataBaseUtil.addFlakyRecord(flakyStatus,new Date(),lastSha1,className,unitTestName,detectCount,projectId,statement);
@@ -234,7 +241,7 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
     @Override
     public void forkFailed(ExecutionEvent event) {
-        System.out.println("######################came forkFailed");
+        //System.out.println("######################came forkFailed");
         super.forkFailed(event);
     }
 
@@ -245,20 +252,20 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
     @Override
     public void mojoStarted(ExecutionEvent event) {
-        //System.out.println("######################came mojoStarted");
+        ////System.out.println("######################came mojoStarted");
         super.mojoStarted(event);
     }
 
     @Override
     public void mojoSucceeded(ExecutionEvent event) {
-        System.out.println("######################came mojoSucceeded");
+        //System.out.println("######################came mojoSucceeded");
 
         super.mojoSucceeded(event);
     }
 
     @Override
     public void mojoFailed(ExecutionEvent event) {
-       // System.out.println("######################came mojoFailed");
+       // //System.out.println("######################came mojoFailed");
 
         super.mojoFailed(event);
     }
@@ -275,13 +282,13 @@ public class FlakyFailCaseHandler extends AbstractExecutionListener implements I
 
     @Override
     public void forkedProjectFailed(ExecutionEvent event) {
-        System.out.println("######################came forkedProjectFailed");
+        //System.out.println("######################came forkedProjectFailed");
         super.forkedProjectFailed(event);
     }
 
     @Override
     public void initialize() throws InitializationException {
-        System.out.println("######################came FlakyFailCaseHandler.initialize");
+        //System.out.println("######################came FlakyFailCaseHandler.initialize");
         delegate = new ExecutionEventLogger();
     }
 
