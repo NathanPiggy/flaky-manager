@@ -89,8 +89,8 @@ _**An empirical analysis of flaky tests**_
 
 ### Strengths
 
-- Examples to explain why flaky test was generated
-- How to solve flaky test is put forward.
+- Examples to explain why flaky test was generated；
+- How to solve flaky test is put forward;
 - Analysis of the value of flaky test discovery from multiple perspectives (positive and pessimistic)
 
 ### Limitations
