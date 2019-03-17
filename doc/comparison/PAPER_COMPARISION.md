@@ -17,9 +17,8 @@ enable html: true
 | An empirical analysis of flaky tests| 1. Examples to explain why flaky test was generated.<br><br> 2. How to solve flaky test is put forward.<br><br>3. Analysis of the value of flaky test discovery from multiple perspectives (positive and pessimistic) |  1.Staying at the research level and not providing tools to solve problems |
 
 **Relationship**
-![relationship 2](relationship%202.jpg)
-
-![relationship3](relationship3.jpg)
+![relationship](relationship.jpg)
+![relationship2](relationship2.jpg)
 * * *
 
 ## PAPER 1
