@@ -8,11 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9717565f-9d14-492b-99b6-7d79f2a7bf12" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/DataBaseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/DataBaseUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/flaky-persistence/target/" />
     <ignored path="$PROJECT_DIR$/flaky-lifecycle-manager/target/" />
@@ -31,26 +26,10 @@
       <file leaf-file-name="FlakyFailCaseHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="36" column="89" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="89" />
+            <state relative-caret-position="285">
+              <caret line="36" column="89" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3905#3906#0" expanded="true" />
-                <element signature="e#3946#3947#0" expanded="true" />
-                <element signature="e#4016#4017#0" expanded="true" />
-                <element signature="e#4059#4060#0" expanded="true" />
-                <element signature="e#9750#9751#0" expanded="true" />
-                <element signature="e#9789#9790#0" expanded="true" />
-                <element signature="e#9856#9857#0" expanded="true" />
-                <element signature="e#9896#9897#0" expanded="true" />
-                <element signature="e#9965#9966#0" expanded="true" />
-                <element signature="e#10007#10008#0" expanded="true" />
-                <element signature="e#10250#10251#0" expanded="true" />
-                <element signature="e#10290#10291#0" expanded="true" />
-                <element signature="e#10912#10913#0" expanded="true" />
-                <element signature="e#10961#10962#0" expanded="true" />
-                <element signature="e#11039#11040#0" expanded="true" />
-                <element signature="e#11090#11091#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,7 +38,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1972">
+            <state relative-caret-position="418">
               <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
@@ -81,8 +60,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="361">
+              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -90,7 +69,7 @@
       <file leaf-file-name="RandomUtilTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="152">
               <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
               <folding>
                 <element signature="e#199#200#0" expanded="true" />
@@ -121,7 +100,7 @@
       <file leaf-file-name="DataBaseUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/DataBaseUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
+            <state relative-caret-position="1140">
               <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="40" />
             </state>
           </provider>
@@ -130,7 +109,7 @@
       <file leaf-file-name="JgitUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-339">
+            <state relative-caret-position="1292">
               <caret line="86" column="59" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
             </state>
           </provider>
@@ -287,7 +266,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -415,7 +394,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -632,7 +611,8 @@
       <workItem from="1551421567180" duration="10277000" />
       <workItem from="1551514205861" duration="17881000" />
       <workItem from="1551663816927" duration="6515000" />
-      <workItem from="1551712144473" duration="3412000" />
+      <workItem from="1551712144473" duration="4327000" />
+      <workItem from="1552268506906" duration="1535000" />
     </task>
     <task id="LOCAL-00001" summary="Update the report system">
       <created>1551284824685</created>
@@ -677,7 +657,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121204000" />
+    <option name="totallyTimeSpent" value="123654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -713,7 +693,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72433305" weight="0.2996454" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.5858407" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7728375" weight="0.2819149" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28860146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2934519" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -729,10 +709,9 @@
     <layout-to-restore>
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72433305" weight="0.2996454" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.5858407" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.72433305" weight="0.2996454" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -740,26 +719,27 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.7728375" visible="true" weight="0.2819149" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="CDI" order="0" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5004042" side_tool="true" weight="0.65309733" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3280142" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32978722" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.3280142" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32978722" />
       <window_info anchor="right" id="Maven Projects" order="4" weight="0.2061439" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995958" weight="0.4716312" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28860146" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3280142" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="CDI" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4987874" weight="0.56028366" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4995958" weight="0.4716312" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4987874" weight="0.56028366" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1050,9 +1030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
           <caret line="133" column="55" selection-start-line="133" selection-start-column="55" selection-end-line="133" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,14 +1042,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/DataBaseUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
+        <state relative-caret-position="1140">
           <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/util/JgitUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-339">
+        <state relative-caret-position="1292">
           <caret line="86" column="59" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
         </state>
       </provider>
@@ -1086,7 +1063,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/src/test/java/com/flaky/lifecycle/manager/flakylifecyclemanager/util/RandomUtilTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
+        <state relative-caret-position="152">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding>
             <element signature="e#199#200#0" expanded="true" />
@@ -1104,7 +1081,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1972">
+        <state relative-caret-position="418">
           <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
@@ -1122,34 +1099,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-maven-extension/src/main/java/com/flaky/maven/extension/processor/FlakyFailCaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="36" column="89" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="89" />
+        <state relative-caret-position="285">
+          <caret line="36" column="89" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="89" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3905#3906#0" expanded="true" />
-            <element signature="e#3946#3947#0" expanded="true" />
-            <element signature="e#4016#4017#0" expanded="true" />
-            <element signature="e#4059#4060#0" expanded="true" />
-            <element signature="e#9750#9751#0" expanded="true" />
-            <element signature="e#9789#9790#0" expanded="true" />
-            <element signature="e#9856#9857#0" expanded="true" />
-            <element signature="e#9896#9897#0" expanded="true" />
-            <element signature="e#9965#9966#0" expanded="true" />
-            <element signature="e#10007#10008#0" expanded="true" />
-            <element signature="e#10250#10251#0" expanded="true" />
-            <element signature="e#10290#10291#0" expanded="true" />
-            <element signature="e#10912#10913#0" expanded="true" />
-            <element signature="e#10961#10962#0" expanded="true" />
-            <element signature="e#11039#11040#0" expanded="true" />
-            <element signature="e#11090#11091#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaky-lifecycle-manager/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="361">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
         </state>
       </provider>
     </entry>
